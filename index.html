@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Order with the Universe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="font-family: sans-serif; text-align: center; padding: 40px;">
+
+  <h1>Place your order with the universe ✨</h1>
+
+  <input id="orderInput" type="text" placeholder="What are you calling in?" style="padding: 10px; width: 80%; max-width: 300px;" />
+
+  <br><br>
+
+  <button onclick="submitOrder()" style="padding: 12px 20px;">
+    Add to cart
+  </button>
+
+  <script>
+    function submitOrder() {
+      const order = document.getElementById('orderInput').value;
+      if(order) {
+        window.location.href = "receipt.html?order=" + encodeURIComponent(order);
+      }
+    }
+  </script>
+
+</body>
+</html>
