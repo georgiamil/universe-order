@@ -20,15 +20,24 @@
 
   <p><strong>Screenshot this as your receipt ✨</strong></p>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const order = params.get("order");
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const order = params.get("order");
 
-    document.getElementById("orderText").innerText = "Item: " + order;
+  const orderContainer = document.getElementById("orderText");
 
-    document.getElementById("orderNumber").innerText =
-      Math.floor(Math.random() * 100000);
-  </script>
+  if (order) {
+    const items = order
+      .split("\n")
+      .filter(item => item.trim() !== "")
+      .join("<br>");
+
+    orderContainer.innerHTML = "<strong>Items:</strong><br><br>" + items;
+  }
+
+  document.getElementById("orderNumber").innerText =
+    Math.floor(Math.random() * 100000);
+</script>
 
 </body>
 </html>
