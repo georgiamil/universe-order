@@ -22,8 +22,7 @@
 
 <script>
   const params = new URLSearchParams(window.location.search);
-  const order = params.get("order");
-
+const order = params.get("order") || localStorage.getItem("order");
   const orderContainer = document.getElementById("orderText");
 
   if (order && orderContainer) {
