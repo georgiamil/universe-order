@@ -26,16 +26,24 @@
 
   const orderContainer = document.getElementById("orderText");
 
-  if (order) {
+  if (order && orderContainer) {
     const items = order
       .split("\n")
-      .filter(item => item.trim() !== "")
-      .join("<br>");
+      .filter(item => item.trim() !== "");
 
-  orderContainer.innerHTML = "<strong>Items:</strong><br><br><span style='line-height:1.6'>" + items + "</span>";
+    let html = "<strong>Items:</strong><br><br>";
 
-  document.getElementById("orderNumber").innerText =
-    Math.floor(Math.random() * 100000);
+    items.forEach(item => {
+      html += item + "<br>";
+    });
+
+    orderContainer.innerHTML = html;
+  }
+
+  const orderNumberEl = document.getElementById("orderNumber");
+  if (orderNumberEl) {
+    orderNumberEl.innerText = Math.floor(Math.random() * 100000);
+  }
 </script>
 
 </body>
