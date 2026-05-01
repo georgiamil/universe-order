@@ -32,8 +32,7 @@
       .filter(item => item.trim() !== "")
       .join("<br>");
 
-    orderContainer.innerHTML = "<strong>Items:</strong><br><br>" + items;
-  }
+  orderContainer.innerHTML = "<strong>Items:</strong><br><br><span style='line-height:1.6'>" + items + "</span>";
 
   document.getElementById("orderNumber").innerText =
     Math.floor(Math.random() * 100000);
