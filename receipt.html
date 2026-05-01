@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Receipt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="font-family: monospace; padding: 30px;">
+
+  <h2>Order Confirmed 💫</h2>
+
+  <p id="orderText"></p>
+
+  <hr>
+
+  <p>Order #: UNV-<span id="orderNumber"></span></p>
+  <p>Status: Unfolding in your favor</p>
+  <p>Estimated delivery: Divine timing</p>
+
+  <br>
+
+  <p><strong>Screenshot this as your receipt ✨</strong></p>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const order = params.get("order");
+
+    document.getElementById("orderText").innerText = "Item: " + order;
+
+    document.getElementById("orderNumber").innerText =
+      Math.floor(Math.random() * 100000);
+  </script>
+
+</body>
+</html>
