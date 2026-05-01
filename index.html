@@ -19,7 +19,8 @@ style="padding: 12px; width: 80%; max-width: 320px; height: 120px;"></textarea>
     function submitOrder() {
       const order = document.getElementById('orderInput').value;
       if(order) {
-        window.location.href = "receipt.html?order=" + encodeURIComponent(order);
+        localStorage.setItem("order", order);
+window.location.href = "receipt.html";
       }
     }
   </script>
